@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cumpleaños</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+			<script type="text/javascript" src="fire.js"></script>
+			<link rel="stylesheet" type="text/css" href="fire.css">
+
+
+  <link rel="stylesheet" href="styles/flexbox-center-container.css" media="all">
+  <link rel="stylesheet" href="styles/system-fonts.css" media="all">
+  <link rel="stylesheet" href="styles/style.css" media="all">
+</head>
+<body>
+
+
+   <div class="container">
+
+      <div class="header">
+           <canvas id=c></canvas>
+  <canvas id="confetti"></canvas>
+  <div class="container" id="count">
+    <h1 id="head"></h1>
+    <ul>
+      <li><span id="day"></span></li>
+      <li><span id="hour"></span></li>
+      <li><span id="minute"></span></li>
+      <li><span id="second"></span></li>
+    </ul>
+  </div>
+  <div id="merrywrap" class="merrywrap">
+    <canvas id="snowfall"></canvas>
+    <div class="giftbox">
+      <div class="cover">
+        <div></div>
+      </div>
+      <div class="box"></div>
+    </div>
+    </div>
+      </div>z
+
+       <div class="titles">
+           <div class="title title-1"><h1>Te</h1></div>
+           <div class="title title-2"><h1>Invito</h1></div>
+           <div class="title title-3"><h1 style="text-align: center;">a <br> mi <br>Fiesta </h1></div>
+       </div>
+
+       <ul class="blocks">
+
+       </ul>
+
+   </div>
+
+   <script>
+			TweenMax.staggerFrom(
+				".titles > div",
+				0.8,
+				{
+					x: "-60",
+					ease: Power3.easeInOut,
+					opacity: "0",
+				},
+				2
+			);
+
+			TweenMax.staggerTo(
+				".titles > div",
+				0.8,
+				{
+					x: "60",
+					ease: Power3.easeInOut,
+					delay: 1.2,
+					opacity: "0",
+				},
+				2
+			);
+			TweenMax.staggerFrom(
+				"li",
+				3,
+				{
+					x: "-1600",
+					delay: 4.2,
+					ease: Expo.easeInOut,
+				},
+				0.16
+			);
+
+			TweenMax.staggerTo(
+				"li",
+				2.6,
+				{
+					x: "1600",
+					delay: 6.8,
+					ease: Expo.easeInOut,
+				},
+				0.2
+			);
+
+			var textWrapper = document.querySelector(".header");
+			HTMLCanvasElement.innerHTML = textWrapper.textContent.replace(
+
+
+			);
+
+			anime.timeline().add({
+				targets: ".header .letter",
+				opacity: [0, 1],
+				translateY: [80, 0],
+				translateZ: 0,
+				easing: "easeOutExpo",
+				duration: 2000,
+				delay: (el, i) => 8400 + 40 * i,
+			});
+		</script>
+
+   <script src="scripts/confetti.min.js" charset="utf-8"></script>
+<script src="scripts/index.js" charset="utf-8"></script>
+
+
+</body>
+</html>
